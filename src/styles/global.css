@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'inconsolata';
+  src: url('/fonts/inconsolata/Inconsolata-VariableFont_wdth,wght.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'inter';
+  src: url('/fonts/inter/Inter-VariableFont_slnt,wght.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'lora';
+  src: url('/fonts/lora/Lora-VariableFont_wght.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'lora-italic';
+  src: url('/fonts/lora/Lora-Italic-VariableFont_wght.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  max-width: 768px;
+  margin: 0 auto;
+  font-family: "lora";
+}
