@@ -1,0 +1,11 @@
+---
+import {DropDown} from "./Dropdown";
+import Switch from "./Switch.astro";
+--- 
+<header class="flex w-100 justify-between">
+  <img src='./assets/images/logo.svg' alt='logo' />
+  <div class="flex gap-4 items-center">
+    <DropDown client:load />
+    <Switch />
+  </div>
+</header>
