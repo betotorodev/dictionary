@@ -11,7 +11,7 @@ export const DropDown = () => {
   return (
     <div className='relative inline-block text-left border-r-2'>
       <div>
-        <button onClick={handleClick} type='button' className='inline-flex w-full justify-center items-center gap-4 rounded-md bg-transparent px-4 py-2 text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 font-bold text-base' id='menu-button' aria-expanded='true' aria-haspopup='true'>
+        <button onClick={handleClick} type='button' className='inline-flex w-full justify-center items-center gap-4 rounded-md bg-transparent px-8 py-2 text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 font-bold text-base' id='menu-button' aria-expanded='true' aria-haspopup='true'>
           {selected}
           {/* <!-- Heroicon name: mini/chevron-down --> */}
           <img src='/assets/images/icon-arrow-down.svg' alt='icon arrow down' />
