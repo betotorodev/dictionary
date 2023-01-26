@@ -34,7 +34,7 @@ body {
   font-family: "lora";
 }
 
-button {
+button, input {
   font-family: "inter"
 }
 

@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      'serif': ['lora'],
+      serif: ['lora'],
       'sans-serif': ['inter'],
-      'mono': ['inconsolata']
+      mono: ['inconsolata']
     }
   },
   plugins: []
