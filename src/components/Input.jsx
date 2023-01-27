@@ -18,7 +18,7 @@ export const Input = () => {
       <section class='mt-[40px]'>
         <div class='flex gap-4 items-center'>
           <h2 class='text-[24px] font-bold italic'>noun</h2>
-          <div class='w-full h-[2px] bg-slate-200'/>
+          <div class='w-full h-[2px] bg-slate-200' />
         </div>
       </section>
     </main>
