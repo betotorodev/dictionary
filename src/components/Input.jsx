@@ -1,9 +1,16 @@
+import { useState } from 'preact/hooks'
+
 export const Input = () => {
+  const [word, setWord] = useState('')
+  const handleChange = (event) => {
+    const value = event.target.value
+    setWord(value)
+  }
   return (
     <main>
       {/* input */}
       <div class='flex justify-between w-full px-[24px] py-[20px] text-xl font-bold bg-[#F4F4F4] rounded-2xl mt-[51px] cursor-pointer' type='text'>
-        <input class='bg-transparent outline-none' placeholder='Search your word' />
+        <input onInput={handleChange} value={word} class='bg-transparent outline-none' placeholder='Search your word' />
         <img src='/assets/images/icon-search.svg' alt='a search icon to load the info' />
       </div>
       {/* word */}
