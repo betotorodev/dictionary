@@ -20,6 +20,18 @@ export const Input = () => {
           <h2 class='text-[24px] font-bold italic'>noun</h2>
           <div class='w-full h-[2px] bg-slate-200' />
         </div>
+        <div class='mt-10'>
+          <h3 class='text-[#757575] text-xl mb-6'>Meaning</h3>
+          <ol class='pl-8'>
+            <li class='py-[13px]'>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
+            <li>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
+            <li>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
+          </ol>
+        </div>
+        <div class='flex gap-4 mt-10'>
+          <h3 class='text-[#757575] text-xl'>Synonyms</h3>
+          <h3 class='text-[#A445ED] font-bold text-xl'>electric keyboard</h3>
+        </div>
       </section>
     </main>
   )
