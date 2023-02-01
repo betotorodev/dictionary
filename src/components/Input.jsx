@@ -1,5 +1,6 @@
 import { useWord, DATA_STATE } from '../hooks/useWord'
 import { useInput } from '../hooks/useInput'
+import { useEffect } from 'preact/hooks'
 
 export const Input = ({ children }) => {
   const { data, loading, updateWord } = useWord()
@@ -12,7 +13,10 @@ export const Input = ({ children }) => {
       clearInput()
     }
   }
-
+  useEffect(() => {
+    console.log(loading)
+  }, [loading])
+  
   return (
     <main>
       {/* input */}
@@ -21,6 +25,20 @@ export const Input = ({ children }) => {
         <img src='/assets/images/icon-search.svg' alt='a search icon to load the info' />
       </div>
       {/* word */}
+      {loading === DATA_STATE.EMPTY && (
+        <section class='w-fit my-[10rem] mx-auto '>
+          <img class='my-5 mx-auto' src='./assets/images/logo.svg' alt='logo' />
+          <h1 class='text-[24px] opacity-30 font-bold text-center text-[#A445ED]'>Welcome to the Dictionary project</h1>
+        </section>
+      )}
+      {
+        data?.success === false && (
+          <section class='w-fit my-[10rem] mx-auto '>
+            <img class='my-5 mx-auto' src='./assets/images/logo.svg' alt='logo' />
+            <h1 class='text-[24px] opacity-30 font-bold text-center'>{data?.message} 😔</h1>
+          </section>
+        )
+      }
       {
       // eslint-disable-next-line multiline-ternary, no-extra-boolean-cast
       !!data?.word && loading === DATA_STATE.COMPLETED && (
