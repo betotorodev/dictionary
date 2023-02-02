@@ -7,13 +7,10 @@ export const FONTS_TYPES = {
 }
 
 export const useFont = () => {
-  const [font, setFont] = useState(() => {
-    return window.localStorage.getItem('font') || FONTS_TYPES.SANS
-  })
+  const [font, setFont] = useState(FONTS_TYPES.SANS)
 
   const handleFont = (typeFont) => {
     setFont(typeFont)
-    window.localStorage.setItem('font', typeFont)
   }
 
   useEffect(() => {

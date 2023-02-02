@@ -1,8 +1,7 @@
 import { useWord, DATA_STATE } from '../hooks/useWord'
 import { useInput } from '../hooks/useInput'
-import { useEffect } from 'preact/hooks'
 
-export const Input = ({ children }) => {
+export const Definition = ({ children }) => {
   const { data, loading, updateWord } = useWord()
   const { inputValue, handleInput, clearInput } = useInput()
 
