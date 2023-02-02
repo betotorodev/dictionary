@@ -27,16 +27,48 @@
   font-display: swap;
 }
 
+:root {
+  /* brand color */
+  --brandColor: #A445ED;
+
+  /* light */
+  --backgroundLight: white;
+  --textLight: #2D2D2D;
+  --inputLight: #F4F4F4;
+  --dividerLight: #979797;
+  --subTextLight: #757575;
+
+  /* dark */
+  --backgroundDark: #050505;
+  --textDark: white;
+  --inputDark: #1F1F1F;
+  --dividerDark: #3A3A3A;
+  --subTextDark: #757575;
+
+  /* fonts */
+  --sans: 'inter';
+  --serif: 'lora';
+  --serif: 'lora';
+  --mono: 'inconsolata';
+}
+
 body {
   max-width: 768px;
   margin: 0 auto;
   padding: 58px 39px;
-  font-family: "lora";
-  background-color: white;
+  font-family: var(--sans);
 }
 
-button, input, h1, h2, h3, ol, li {
-  font-family: "inter"
+.sans {
+  font-family: var(--sans);
+}
+
+.serif {
+  font-family: var(--serif);
+}
+
+.mono {
+  font-family: var(--mono);
 }
 
 ol {
@@ -47,20 +79,21 @@ ol {
 
 /* The switch - the box around the slider */
 .dark {
-  background-color: #050505;
+  background-color: var(--backgroundDark);
+  color: var(--textDark);
 }
 
 .input-dark {
-  background-color: #1F1F1F;
-  color: white;
+  background-color: var(--inputDark);
+  color: var(--textDark);
 }
 
-.results-dark {
-  color: white;
+.divider.dark {
+  background-color: var(--dividerDark)
 }
 
-.divider-dark {
-  background-color: #3A3A3A;
+.menu-dark {
+  color: var(--textDark);
 }
 
 .switch {
@@ -85,7 +118,7 @@ ol {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #757575;
+  background-color: var(--subTextDark);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -98,17 +131,17 @@ ol {
   top: 3px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--backgroundLight);
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #A445ED;
+  background-color: var(--brandColor);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #A445ED;
+  box-shadow: 0 0 1px var(--brandColor);
 }
 
 input:checked + .slider:before {

@@ -4,11 +4,13 @@
 <script>
   const body = document.getElementById('body')
   const input = document.getElementById('search')
-  const results = document.getElementById('results')
+  const textButton = document.getElementById('menu-button')
+  // const textButton = document.getElementById('menu-button')
+
   document.getElementById('button').addEventListener('click', () => {
     body.classList.toggle('dark')
     input.classList.toggle('input-dark')
-    results.classList.toggle('results-dark')
+    textButton.classList.toggle('menu-dark')
   })
 </script>
 <div class='flex gap-4 px-6'>
