@@ -32,6 +32,7 @@ body {
   margin: 0 auto;
   padding: 58px 39px;
   font-family: "lora";
+  background-color: white;
 }
 
 button, input, h1, h2, h3, ol, li {
@@ -45,6 +46,23 @@ ol {
 /* SWITCH */
 
 /* The switch - the box around the slider */
+.dark {
+  background-color: #050505;
+}
+
+.input-dark {
+  background-color: #1F1F1F;
+  color: white;
+}
+
+.results-dark {
+  color: white;
+}
+
+.divider-dark {
+  background-color: #3A3A3A;
+}
+
 .switch {
   position: relative;
   display: inline-block;
