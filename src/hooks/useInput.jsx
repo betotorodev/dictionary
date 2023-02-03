@@ -5,7 +5,7 @@ export const useInput = () => {
 
   const handleInput = (event) => {
     const value = event.target.value
-    setInputValue(value)
+    setInputValue(value.toLocaleLowerCase())
   }
 
   const clearInput = () => {
