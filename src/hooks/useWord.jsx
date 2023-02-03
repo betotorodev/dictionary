@@ -14,7 +14,7 @@ export const useWord = () => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': 'f47ec3cdfcmshbbe3ab04c3e297fp135cdfjsn0c40e5353898',
+      'X-RapidAPI-Key': import.meta.env.PUBLIC_RAPIDAPI_KEY,
       'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
     }
   }
