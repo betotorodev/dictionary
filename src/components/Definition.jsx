@@ -31,7 +31,7 @@ export const Definition = ({ children }) => {
       {loading === DATA_STATE.EMPTY && (
         <section class='w-fit my-[10rem] mx-auto '>
           <img class='my-5 mx-auto' src='./assets/images/logo.svg' alt='logo' />
-          <h1 class='text-[24px] opacity-30 font-bold text-center text-[#A445ED]'>Welcome to the Dictionary project</h1>
+          <h1 class='text-[24px] opacity-50 font-bold text-center text-[var(--subTextLight)]'>Welcome to the Dictionary project</h1>
         </section>
       )}
       {
