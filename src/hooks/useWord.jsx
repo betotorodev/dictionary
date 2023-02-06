@@ -29,8 +29,33 @@ export const useWord = () => {
       fetch(`${API_URL}${word}`, options)
         .then(response => response.json())
         .then(response => {
-          setData(response)
-          setLoading(DATA_STATE.COMPLETED)
+          if (response.word) {
+            let typeOfWord = []
+            let dataTransformed = {
+              word: response.word,
+              pronunciation: response.pronunciation.all,
+              results: []
+            }
+            response.results.forEach(item => {
+              if (!typeOfWord.includes(item.partOfSpeech)) {
+                typeOfWord.push(item.partOfSpeech)
+              }
+            })
+            typeOfWord.forEach(item => {
+              dataTransformed.results.push({
+                type: item,
+                definitions: response.results.filter(definition => {
+                  return definition.partOfSpeech === item
+                })
+              })
+            })
+            console.log(dataTransformed)
+            setData(dataTransformed)
+            setLoading(DATA_STATE.COMPLETED)
+          } else {
+            setData(response)
+            setLoading(DATA_STATE.COMPLETED)
+          }
         })
         .catch(err => console.error(err))
     }
