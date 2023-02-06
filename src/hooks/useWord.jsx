@@ -30,8 +30,8 @@ export const useWord = () => {
         .then(response => response.json())
         .then(response => {
           if (response.word) {
-            let typeOfWord = []
-            let dataTransformed = {
+            const typeOfWord = []
+            const dataTransformed = {
               word: response.word,
               pronunciation: response.pronunciation.all,
               results: []
@@ -49,7 +49,6 @@ export const useWord = () => {
                 })
               })
             })
-            console.log(dataTransformed)
             setData(dataTransformed)
             setLoading(DATA_STATE.COMPLETED)
           } else {
