@@ -1,32 +1,43 @@
 import { useWord, DATA_STATE } from '../hooks/useWord'
 import { useInput } from '../hooks/useInput'
+import { useEffect } from 'preact/hooks'
 
 export const Definition = ({ children }) => {
   const { data, loading, updateWord } = useWord()
-  const { inputValue, handleInput, clearInput } = useInput()
+  const { inputValue, handleInput, clearInput, checkInput, isEmpty } = useInput()
 
   const handleKeyDown = (event) => {
-    const isNotEmpty = !!inputValue
-    if (event.key === 'Enter' && isNotEmpty) {
+    const validationInput = !!inputValue
+    if (event.key === 'Enter' && validationInput) {
       updateWord(inputValue)
       clearInput()
+      checkInput(false)
+    } else if (event.key === 'Enter' && !validationInput) {
+      checkInput(true)
     }
   }
   const handleClick = () => {
-    const isNotEmpty = !!inputValue
-    if (isNotEmpty) {
+    const validationInput = !!inputValue
+    if (validationInput) {
       updateWord(inputValue)
       clearInput()
+      checkInput(false)
+    } else if (!validationInput) {
+      checkInput(true)
     }
   }
+  useEffect(() => {
+    console.log(isEmpty)
+  }, [isEmpty])
 
   return (
     <main>
       {/* input */}
-      <div class='flex justify-between w-full px-[24px] py-[20px] text-xl font-bold bg-[#F4F4F4] rounded-2xl mt-[51px] cursor-pointer' type='text' id='search'>
+      <div class={`flex justify-between w-full px-[24px] py-[20px] text-xl font-bold bg-[#F4F4F4] rounded-2xl mt-[51px] cursor-pointer ${isEmpty ? 'border-2 border-red-700' : ''}`} type='text' id='search'>
         <input onKeyDown={handleKeyDown} onInput={handleInput} value={inputValue} class='bg-transparent outline-none w-full' placeholder='Search your word' />
         <img onClick={handleClick} src='/assets/images/icon-search.svg' alt='a search icon to load the info' />
       </div>
+      {isEmpty && <small class='text-red-700 mt2 text-bold'>Upssss, It can't be empty</small>}
       {/* word */}
       {loading === DATA_STATE.EMPTY && (
         <section class='w-fit my-[10rem] mx-auto '>
