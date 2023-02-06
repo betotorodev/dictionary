@@ -29,16 +29,19 @@ export const Definition = ({ children }) => {
   return (
     <main>
       {/* input */}
-      <div class={`flex justify-between w-full px-[24px] py-[20px] text-xl font-bold bg-[#F4F4F4] rounded-2xl mt-[51px] cursor-pointer ${isEmpty ? 'border-2 border-red-700' : ''}`} type='text' id='search'>
-        <input onKeyDown={handleKeyDown} onInput={handleInput} value={inputValue} class='bg-transparent outline-none w-full' placeholder='Search your word' />
-        <img onClick={handleClick} src='/assets/images/icon-search.svg' alt='a search icon to load the info' />
+      <div class='mt-[51px]'>
+        <label htmlFor='search_input'>Search your word</label>
+        <div class={`flex justify-between w-full px-[24px] py-[20px] text-xl font-bold bg-[#F4F4F4] rounded-2xl cursor-pointer mt-2 ${isEmpty ? 'border-2 border-red-700' : ''}`} type='text' id='search'>
+          <input id='search_input' onKeyDown={handleKeyDown} onInput={handleInput} value={inputValue} class='bg-transparent outline-none w-full' placeholder='coffee, awesome, love, etc.' />
+          <img onClick={handleClick} src='/assets/images/icon-search.svg' alt='a search icon to load the info' />
+        </div>
       </div>
       {isEmpty && <small class='text-red-700 mt2 text-bold'>Upssss, It can't be empty</small>}
       {/* word */}
       {loading === DATA_STATE.EMPTY && (
         <section class='w-fit my-[10rem] mx-auto '>
           <img class='my-5 mx-auto' src='./assets/images/logo.svg' alt='logo' />
-          <h1 class='text-[24px] opacity-50 font-bold text-center text-[var(--subTextLight)]'>Welcome to the Dictionary project</h1>
+          <h1 class='text-[24px] font-bold text-center text-[var(--subTextLight)]'>Welcome to the Dictionary project</h1>
         </section>
       )}
       {
