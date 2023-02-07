@@ -33,7 +33,7 @@ export const Definition = ({ children }) => {
         <label htmlFor='search_input' class='text-sm md:text-xl hidden'>Search your word</label>
         <div class={`flex justify-between w-full px-[24px] py-[14px] md:py-[20px] text-base md:text-xl font-bold bg-[#F4F4F4] rounded-2xl cursor-pointer mt-2 ${isEmpty ? 'border-2 border-red-700' : ''}`} type='text' id='search'>
           <input id='search_input' onKeyDown={handleKeyDown} onInput={handleInput} value={inputValue} class='bg-transparent outline-none w-full' placeholder='coffee, love, etc.' />
-          <img onClick={handleClick} src='/assets/images/icon-search.svg' alt='a search icon to load the info' />
+          <img id='search_icon' onClick={handleClick} src='/assets/images/icon-search.svg' alt='a search icon to load the info' />
         </div>
       </div>
       {isEmpty && <small class='text-red-700 mt2 text-bold'>Upssss, It can't be empty</small>}
@@ -48,7 +48,7 @@ export const Definition = ({ children }) => {
         data?.success === false && (
           <section class='w-fit my-[10rem] mx-auto '>
             <img class='my-5 mx-auto' src='./assets/images/logo.svg' alt='logo' />
-            <h1 class='text-[24px] opacity-30 font-bold text-center'>{data?.message} 😔</h1>
+            <h1 id='error_title' class='text-[24px] opacity-30 font-bold text-center'>{data?.message} 😔</h1>
           </section>
         )
       }
@@ -58,7 +58,7 @@ export const Definition = ({ children }) => {
         <>
           <section class='flex justify-between mt-11'>
             <div>
-              <h1 class='text-[32px] md:text-[64px] font-bold'>{data?.word}</h1>
+              <h1 id='word_title' class='text-[32px] md:text-[64px] font-bold'>{data?.word}</h1>
               <h3 class='text-[24px] text-[#A445ED]'>
                 /{data?.pronunciation}/
               </h3>
