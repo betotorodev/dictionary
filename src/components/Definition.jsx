@@ -32,7 +32,7 @@ export const Definition = ({ children }) => {
       <div class='mt-[51px]'>
         <label htmlFor='search_input' class='text-sm md:text-xl hidden'>Search your word</label>
         <div class={`flex justify-between w-full px-[24px] py-[14px] md:py-[20px] text-base md:text-xl font-bold bg-[#F4F4F4] rounded-2xl cursor-pointer mt-2 ${isEmpty ? 'border-2 border-red-700' : ''}`} type='text' id='search'>
-          <input id='search_input' onKeyDown={handleKeyDown} onInput={handleInput} value={inputValue} class='bg-transparent outline-none w-full' placeholder='coffee, love, etc.' />
+          <input id='search_input' onKeyDown={handleKeyDown} onInput={handleInput} value={inputValue} class='bg-transparent outline-none w-full' placeholder='Search your word :)' />
           <img id='search_icon' onClick={handleClick} src='/assets/images/icon-search.svg' alt='a search icon to load the info' />
         </div>
       </div>
