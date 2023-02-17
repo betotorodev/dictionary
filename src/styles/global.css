@@ -53,7 +53,11 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 768px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 58px 39px;
   font-family: var(--sans);
